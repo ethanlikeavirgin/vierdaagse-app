@@ -1,7 +1,68 @@
+@import 'extra.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 [x-cloak] {
     display: none;
+}
+body {
+    @apply bg-maindark;
+}
+h1 {
+    @apply text-[160px] leading-[120px] tracking-tighter font-afacad font-bold duration-700;
+}
+.h1-style {
+    @apply text-[130px] leading-[105px] tracking-tighter font-afacad font-bold duration-700;
+}
+h2 {
+    @apply text-6xl font-bold tracking-tighter font-afacad;
+}
+h3 {
+    @apply text-2xl tracking-tighter font-afacad font-bold;
+}
+.main-text{
+    @apply font-afacad text-base font-normal;
+} 
+.btn {
+    @apply block w-fit px-5 py-3 rounded-[30px] duration-500;
+}
+.btn--primary {
+    @apply bg-mainldark border border-white;
+}
+.btn--primary:hover {
+    @apply bg-white text-maindark; 
+}
+/*------EXTRA------*/
+h1:hover {
+    @apply font-black;
+}
+.v-bulb {
+    bottom: -8.5rem;
+    height: 400px;
+    width: 400px;
+    filter: blur(32px);
+    opacity: 1;
+    overflow: hidden;
+    border-radius: 9999px;
+    background: conic-gradient(from 0deg at 50% 50%, rgba(255, 255, 255, 0.555), rgb(121, 14, 0), rgba(255, 255, 255, 0.54) 360deg);
+    position: fixed;
+    right: -4rem;
+    transition: all 0.7s ease-in-out;
+}
+.v-bulb:hover {
+    background: conic-gradient(from 0deg at 50% 50%, rgb(255, 255, 255), rgb(121, 14, 0), rgb(255, 255, 255) 360deg);
+}
+.v-hero::after {
+    content: '';
+    @apply block z-0 absolute top-0 left-0 w-full h-full;
+    background: transparent linear-gradient(120deg, #000000 0%, #FF0000 100%) 0% 0% no-repeat padding-box;
+    opacity: 0.6;
+}
+.v-hero {
+    @apply min-h-screen flex items-end justify-start;
+}
+.v-hero h1 {
+    letter-spacing: -7px !important;
 }

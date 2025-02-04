@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main_input {
+    @apply text-sm font-light text-black bg-white px-4 py-2.5 rounded-3xl border-none outline-none shadow-none;
+}
+.main_checkbox {
+    @apply w-4 h-4 mr-2 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600;
+}
+.main_input.alt {
+    border: 1px solid rgba(188, 187, 187, 0.671);
+}
+.main_btn {
+    /*@apply text-sm font-light text-white bg-blue-600 px-4 py-2.5 rounded-3xl outline-none shadow-none;*/
+    @apply border-[0.5px] border-white/15 hover:bg-white hover:text-ade-orange duration-500;
+    color: white;
+    letter-spacing: 0;
+    background-color: transparent;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 18px;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+    display: flex;
+}
+.main_bg {
+    @apply relative min-h-screen h-full;
+}
+.main_hero {
+    position: relative;
+}
+.main_hero::before {
+    content: '';
+    @apply block absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/25 via-black/75 to-black opacity-100;
+}
+.main_sidenav {
+    @apply fixed right-0 top-0 bg-white rounded-tl-45px rounded-bl-45px p-10 w-6/12 h-full z-[999] overflow-y-scroll;
+}
+.main_bg::after {
+    content: '';
+    @apply bg-black/85 top-0 left-0 absolute w-full h-full block z-[1];
+}
+.icon_invert svg {
+    @apply fill-black;
+}
+.main-text {
+    @apply text-[#ffffff8f] font-light sm:text-[17px] text-base sm:leading-6 leading-normal;
+    letter-spacing: 0.08px;
+}
+.main-text.sm {
+    @apply text-[#ffffff8f] font-light sm:text-[14px] text-base sm:leading-5 leading-normal;
+    letter-spacing: 0.08px;
+}
+.s-main-btn {
+    @apply  text-black font-extralight text-sm sm:px-6 px-5 py-4 rounded-40px border-[1.5px] border-white hover:bg-white/60 duration-500;
+}
+.btn-large  {
+    @apply flex flex-row items-center;
+    span {
+        @apply border border-black rounded-full p-2 ml-4 duration-500;
+        svg {
+            @apply fill-black duration-500;
+        }
+    }
+}
+.btn-large:hover span {
+    @apply bg-mainhometwo border-white hover:text-white;
+}
+.btn-large:hover span svg {
+    @apply fill-white;
+}
+.btn-white {
+    @apply bg-white text-black py-3 px-6 rounded-full font-light flex w-fit items-center duration-500;
+    svg {
+        @apply fill-black ml-1 h-6 duration-500;
+    }
+}
+.btn-white:hover svg {
+    @apply transition-all translate-x-2 duration-500;
+}
+.btn-white.alt {
+    @apply bg-mainhometwo text-white py-3 px-6 rounded-full font-light flex w-fit items-center duration-500;
+    svg {
+        @apply fill-white ml-1 h-6 duration-500;
+    }
+}
+.btn-white:hover svg {
+    @apply transition-all translate-x-2 duration-500;
+}
+.main-ade h1, .t-layout h1 {
+    @apply  sm:text-7xl text-3xl font-light hover:font-medium;
+    letter-spacing: -2.5px;
+    text-align: center;
+    transition: all 1.2s ease-in-out;
+}
+.main-ade h1.alt {
+    @apply  sm:text-6xl text-3xl font-extralight z-10 normal-case text-white;
+}
+.main-ade h2, .t-layout h2 {
+    @apply  sm:text-4xl text-2xl font-normal;
+}
+.main-ade h3, .t-layout h3 {
+    @apply  sm:text-2xl text-xl font-semibold;
+}
+.main-ade .contact-info {
+    div {
+        @apply mb-4;
+    }
+    svg {
+        @apply mr-1.5;
+    }
+}
+.main-ade input[type="text"], .main-ade textarea, .main-ade select {
+    @apply text-white  text-base font-light flex flex-row items-center px-6 py-3 border-[0.5px] border-solid border-white/25 rounded-3xl bg-transparent;
+}
+.main-ade input[type="text"]::placeholder, .main-ade textarea::placeholder, .main-ade select::placeholder {
+    @apply text-white  text-base font-light;
+}
+.main-ade label {
+    @apply  text-xs text-white;
+}
+.main-ade {
+    /*padding-top: 88px;*/
+}
+.main-ade #contactform {
+    scroll-padding-top: 100px;
+    scroll-margin-top: 100px;
+}
+.main-ade .social-icon {
+    @apply bg-white rounded-full w-10 h-10 flex items-center justify-center;
+}
+.hero-overlay {
+    @apply relative;
+}
+.hero-overlay::after {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-full block bg-gradient-to-b from-[#242424] to-[#D03630] opacity-75;
+}
+.t-layout ul, .main-ade ul {
+    @apply list-disc list-outside pl-3.5;
+}
+.t-layout ol, .main-ade ol {
+    @apply list-decimal list-outside pl-3.5;
+}
+header nav ul li a:hover {
+    @apply text-mainhometwo border-b border-mainhometwo duration-500;
+}
+.sm-logo img {
+    @apply h-4;
+}
+/* Define the custom animation class */
+.animate-title {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+    transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+}
+.animate-left {
+    opacity: 0;
+    transform: translateX(-25px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+.animate-left-slow {
+    opacity: 0;
+    transform: translateX(-25px);
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+}
+.animate-right {
+    opacity: 0;
+    transform: translateX(25px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+.animate-right-slow {
+    opacity: 0;
+    transform: translateX(25px);
+    transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+}
+.animate-bottom {
+    opacity: 0;
+    transform: translateY(-25px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+.animate-bottom-slow {
+    opacity: 0;
+    transform: translateY(-25px);
+    transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+}
+.animate-top {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+}
+.animate-top-slow {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+}
+@font-face {
+    font-family: 'Satoshi';
+    src: url('/storage/fonts/Satoshi-Variable.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+.ade-c {
+    @apply absolute left-0 right-0 m-auto block overflow-hidden rounded-full sm:w-[400px] w-full;
+    bottom: -8.5rem;
+    height: 200px;
+    filter: blur(32px);
+    background: conic-gradient(from 0deg at 50% 50%,#ffd9ad 0deg,#139ce5 180deg,#fd864d 360deg);
+}
+html, body {
+    /*cursor: none;*/
+}
+[data-cursor] {
+    background-color: #ff4533;
+    border-radius: 50%;
+    height: 1.5rem;
+    width: 1.5rem;
+    transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease, background-color 0.25s ease, border-radius 0.25s ease;
+    z-index: 100000;
+}
+.cursor-hover--button [data-cursor] {
+    width: 2rem;
+    height: 2rem;
+    mix-blend-mode: multiple;
+}
+.cursor-hover--a [data-cursor] {
+    width: 2rem;
+    height: 2rem;
+    mix-blend-mode: multiply;
+}
+.cursor-hover--content [data-cursor] {
+    opacity: 0.5;
+    width: 2rem;
+    height: 2rem;
+    background-color: black;
+}
+.bg-conic-black {
+    background: conic-gradient(from 0deg at 50% 50%,#000000 0deg,#000000 180deg,#000000 360deg);
+}

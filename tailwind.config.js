@@ -16,6 +16,36 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                afacad: ['Afacad Flux', ...defaultTheme.fontFamily.sans],
+            },
+            minHeight: {
+                '600px': '600px',
+            },
+            fontSize: {
+                '12px': '12px',
+            },
+            borderRadius: {
+                '40px': '40px',
+                '45px': '45px',
+            },
+            colors: {
+                'maindark': '#141511',
+                'mainldark': '#6061624D',
+                'mainone': '#FF9D00',
+                'maintwo': '#FF00D8',
+                'mainthree': '#03041e',
+                'mainhomeone': '#242424',
+                'mainhometwo': '#D03630',
+                'ade-orange': '#ff4533',
+            },
+            backgroundColor: {
+                'mainone': '#FF9D00',
+                'maintwo': '#FF00D8',
+                'mainthree': '#03041e',
+                'mainhomeone': '#242424',
+                'mainhometwo': '#D03630',
+                'ade': '#070A46',
+                'ade-orange': '#ff4533',
             },
         },
     },
