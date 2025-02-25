@@ -33,7 +33,7 @@ const logout = () => {
 
         <Banner />
 
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen bg-brown">
             <nav class="bg-white border-b border-gray-100">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -142,8 +142,12 @@ const logout = () => {
                                             Profile
                                         </DropdownLink>
 
-                                        <DropdownLink :href="route('creater')">
+                                        <DropdownLink :href="route('builder.index')">
                                             Start creating
+                                        </DropdownLink>
+
+                                        <DropdownLink :href="route('fields.index')">
+                                            Field creating
                                         </DropdownLink>
 
                                         <DropdownLink v-if="$page.props.jetstream.hasApiFeatures" :href="route('api-tokens.index')">

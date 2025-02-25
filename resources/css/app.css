@@ -34,6 +34,24 @@ h3 {
 .btn--primary:hover {
     @apply bg-white text-maindark; 
 }
+.toolbar {
+    @apply flex flex-wrap gap-1;
+}
+.toolbar-button {
+    @apply bg-black px-5 py-3 rounded-3xl text-sm;
+}
+.editor-parent {
+    @apply bg-white rounded-3xl p-6 my-4;
+}
+.editor-parent .tiptap-editor {
+    @apply relative border-2 border-black rounded-3xl mt-4 min-h-36 p-6 text-black placeholder:text-black;
+}
+.editor-parent .tiptap-editor div {
+    @apply absolute top-0 left-0 w-full h-full outline-none border-none shadow-none p-6 overflow-scroll;
+}
+.editor-parent input {
+    @apply relative border-2 border-black rounded-3xl mt-4 p-3 text-black placeholder:text-black;
+}
 /*------EXTRA------*/
 h1:hover {
     @apply font-black;
