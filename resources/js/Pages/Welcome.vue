@@ -5,6 +5,9 @@
     import Edition from '@/Components/Edition.vue';
     import Reviews from '@/Components/Reviews.vue';
     export default {
+        props: {
+            table_home: Object,
+        },
         components: {
             Container,
             Logo,
@@ -19,13 +22,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
-    <div class="relative z-0 bg-cover bg-center" style="background-image: url('/storage/photos/Hero_Home_Vierdaagse.png')">
+    <div class="relative z-0 bg-cover bg-center" :style="{ backgroundImage: `url('/storage/${table_home.image}')` }">
+
         <a class="absolute -left-10 bottom-0 h-[400px]">
             <Logo></Logo>
         </a>
         <Container>
             <div class="v-hero">
-                <h1 class="text-white uppercase tracking-tight relative z-20 pl-10 pb-24">Vierdaagse<br>van de ijzer</h1>
+                <h1 class="text-white uppercase tracking-tight relative z-20 pl-10 pb-24" v-html="table_home.test"></h1>
             </div>
         </Container>
     </div>

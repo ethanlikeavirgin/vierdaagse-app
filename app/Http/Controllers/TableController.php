@@ -8,6 +8,7 @@ use Inertia\Inertia;
 use App\Models\Table;
 use App\Models\Field;
 use App\Models\Combiner;
+use App\Models\Record;
 
 class TableController extends Controller
 {
@@ -24,12 +25,12 @@ class TableController extends Controller
             'category' => 'required|string',
         ]);
 
-        $baseSlug = strtolower(str_replace(' ', '-', $request->name));
+        $baseSlug = strtolower(str_replace(' ', '_', $request->name));
         $slug = $baseSlug;
         // Check for uniqueness
         $counter = 1;
         while (Table::where('slug', $slug)->exists()) {
-            $slug = $baseSlug . '-' . $counter;
+            $slug = $baseSlug . '_' . $counter;
             $counter++;
         }
 
@@ -49,12 +50,12 @@ class TableController extends Controller
             'category' => 'required|string',
         ]);
 
-        $baseSlug = strtolower(str_replace(' ', '-', $request->name));
+        $baseSlug = strtolower(str_replace(' ', '_', $request->name));
         $slug = $baseSlug;
         // Check for uniqueness
         $counter = 1;
         while (Table::where('slug', $slug)->exists()) {
-            $slug = $baseSlug . '-' . $counter;
+            $slug = $baseSlug . '_' . $counter;
             $counter++;
         }
 
@@ -76,10 +77,11 @@ class TableController extends Controller
     {
         $table = Table::where('id', $id)->get();
         $fields = Field::all();
+        $records = Record::where('table_id', $id)->get();
         $combiner = Combiner::with('field')->get();
-        return Inertia::render('Tables/Detail', ['table' => $table, 'fields' => $fields, 'combiner' => $combiner]);
+        return Inertia::render('Tables/Detail', ['table' => $table, 'fields' => $fields, 'combiner' => $combiner, 'records' => $records]);
     }
-    public function duplicate($id, Request $request)
+    /*public function duplicate($id, Request $request)
     {
         $c_field = Field::where('slug', $request->category)->first();
         Combiner::create([
@@ -87,19 +89,33 @@ class TableController extends Controller
             'field_id' => $c_field->id,
             'content' => $request->name,
         ]);
-    }
-    public function savecontent($id, Request $request)
+    }*/
+    public function duplicate($id, Request $request)
     {
-        $filePath = $request->file('file') ? $request->file('file')->store('files', 'public') : null;
+        $c_field = Field::where('slug', $request->category)->first();
+        $records = Record::where('table_id', $id)->get();
 
-        if($request->file != "") {
-            Combiner::where('id', $id)->update([
-                'content' => $filePath,
-            ]);
-        }else {
-            Combiner::where('id', $id)->update([
-                'content' => $request->content,
+        $baseSlug = strtolower(str_replace(' ', '_', $request->name));
+        $slug = $baseSlug;
+        // Check for uniqueness
+        $counter = 1;
+        while (Combiner::where('field_name', $slug)->exists()) {
+            $slug = $baseSlug . '_' . $counter;
+            $counter++;
+        }
+        foreach ($records as $record) {
+            Combiner::create([
+                'table_id' => $id,
+                'field_id' => $c_field->id,
+                'field_name' => $slug,
+                'content' => $request->name,
+                'record_id' => $record->id,
             ]);
         }
+    }
+
+    public function savecontent($recordId, Request $request)
+    {
+        dd($request);
     }
 }

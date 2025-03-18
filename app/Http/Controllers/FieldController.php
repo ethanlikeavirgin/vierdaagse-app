@@ -20,12 +20,12 @@ class FieldController extends Controller
             'category' => 'required|string',
         ]);
 
-        $baseSlug = strtolower(str_replace(' ', '-', $request->name));
+        $baseSlug = strtolower(str_replace(' ', '_', $request->name));
         $slug = $baseSlug;
         // Check for uniqueness
         $counter = 1;
         while (Field::where('slug', $slug)->exists()) {
-            $slug = $baseSlug . '-' . $counter;
+            $slug = $baseSlug . '_' . $counter;
             $counter++;
         }
 

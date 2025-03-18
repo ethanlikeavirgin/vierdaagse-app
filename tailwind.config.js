@@ -17,6 +17,7 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
                 afacad: ['Afacad Flux', ...defaultTheme.fontFamily.sans],
+                clash: ['ClashDisplay-Variable', ...defaultTheme.fontFamily.sans],
             },
             minHeight: {
                 '600px': '600px',
@@ -27,6 +28,8 @@ export default {
             borderRadius: {
                 '40px': '40px',
                 '45px': '45px',
+                '75px': '75px',
+                '100px': '100px',
             },
             colors: {
                 'maindark': '#141511',
@@ -37,6 +40,8 @@ export default {
                 'mainhomeone': '#242424',
                 'mainhometwo': '#D03630',
                 'ade-orange': '#ff4533',
+                'primary--dark': '#000000',
+                'primary--white': '#FFFFFF',
             },
             backgroundColor: {
                 'mainone': '#FF9D00',

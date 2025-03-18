@@ -1,14 +1,23 @@
 @import 'extra.css';
+@import 'dashboard/dashboard.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'ClashDisplay-Variable';
+    src: url('/fonts/ClashDisplay-Variable.ttf') format('truetype');
+    font-weight: 200 700;
+    font-display: swap;
+    font-style: normal;
+}
+
 [x-cloak] {
     display: none;
 }
 body {
-    @apply bg-maindark;
+    @apply bg-maindark font-clash;
 }
 h1 {
     @apply text-[160px] leading-[120px] tracking-tighter font-afacad font-bold duration-700;
@@ -22,7 +31,7 @@ h2 {
 h3 {
     @apply text-2xl tracking-tighter font-afacad font-bold;
 }
-.main-text{
+.main-text {
     @apply font-afacad text-base font-normal;
 } 
 .btn {
@@ -83,4 +92,7 @@ h1:hover {
 }
 .v-hero h1 {
     letter-spacing: -7px !important;
+}
+.main-layout {
+    @apply bg-gradient-to-l from-mainhomeone/25 to-mainhometwo/45;
 }

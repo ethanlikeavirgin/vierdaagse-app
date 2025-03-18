@@ -15,8 +15,7 @@ class Field extends Model
     ];
     public function tables(): BelongsToMany
     {
-        return $this->belongsToMany(Table::class, 'combiner')
-            ->withPivot(['order', 'content', 'created_at', 'updated_at']);
+        return $this->belongsToMany(Table::class, 'combiner')->withPivot(['order', 'content', 'created_at', 'updated_at']);
     }
 
     public function combiners()

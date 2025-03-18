@@ -78,7 +78,18 @@ return [
     |
     */
 
-    'locale' => env('APP_LOCALE', 'en'),
+    'locale' => env('APP_LOCALE', 'nl'),
+    'available_locales' => [
+        'nl',
+        'fr',
+        'en',
+    ],
+    'supportedLocales' => [
+        'nl', // Dutch
+        'fr', // French
+        'en', // English
+        // Add more locales as needed
+    ],
 
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
 

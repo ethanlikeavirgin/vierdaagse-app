@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dashboard-main h1 {
+    @apply font-clash text-6xl font-medium tracking-tighter;
+    span {
+        @apply text-mainhometwo;
+    }
+}
+.d-main-parentblock {
+    @apply bg-primary--dark/50 rounded-75px p-10 relative;
+}
+.d-main-parentblock>span {
+    @apply bg-mainhometwo font-clash font-bold rounded-full h-10 w-10 p-3 flex items-center justify-center;
+    @apply absolute top-3 left-3;
+}
+.dashboard-main .d-main-input {
+    @apply bg-primary--white/15 rounded-75px px-4 py-3 font-clash border-none outline-none shadow-none;
+    @apply text-white/80 placeholder:text-white/60 focus:outline-none focus:ring-0 focus:border-none focus:shadow-none;
+}
+.dashboard-main .d-main-input.alt {
+    @apply bg-mainhometwo/65 min-w-24;
+}
+.dashboard-main .d-main-btn {
+    @apply bg-black text-white rounded-75px px-4 py-3 font-clash border-none outline-none shadow-none;
+}
+/*.d-main-textarea {
+    @apply ;
+}*/
