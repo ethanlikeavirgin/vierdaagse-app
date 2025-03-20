@@ -14,6 +14,10 @@ class Combiner extends Model
     public $translatable = ['content'];
 
     protected $fillable = ['table_id', 'field_id', 'field_name', 'record_id', 'order', 'content'];
+    // ✅ Force JSON cast to ensure it's handled correctly
+    protected $casts = [
+        'content' => 'array',  // ✅ Ensures Laravel treats it as JSON
+    ];
 
     public function table()
     {

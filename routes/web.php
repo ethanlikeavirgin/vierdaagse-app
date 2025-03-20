@@ -35,7 +35,7 @@ Route::middleware([
     Route::get('/dashboard', function () {return Inertia::render('Dashboard');})->name('dashboard');
     Route::resource('builder', TableController::class);
     Route::post('/builder/{id}/duplicate', [TableController::class, 'duplicate'])->name('builder.duplicate');
-    Route::post('/builder/{id}/savecontent', [TableController::class, 'savecontent'])->name('builder.savecontent');
+    Route::post('/builder/{recordId}/savecontent', [TableController::class, 'savecontent'])->name('builder.savecontent');
     Route::post('/builder/{id}/createrecord', [RecordController::class, 'createrecord'])->name('builder.createrecord');
     Route::post('/builder/{id}/uploadfile', [RecordController::class, 'uploadfile'])->name('builder.uploadfile');
     Route::resource('fields', Fieldcontroller::class);

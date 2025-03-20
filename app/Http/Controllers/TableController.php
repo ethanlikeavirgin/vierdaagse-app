@@ -113,9 +113,10 @@ class TableController extends Controller
             ]);
         }
     }
-
+    
     public function savecontent($recordId, Request $request)
     {
-        dd($request);
+        dd("this is a tester");
     }
+
 }
