@@ -116,7 +116,18 @@ class TableController extends Controller
     
     public function savecontent($recordId, Request $request)
     {
-        dd("this is a tester");
-    }
+        $items = $request->input('content');
 
+        foreach ($items as $item) {
+            $comb = \App\Models\Combiner::find($item['id']);
+
+            if (!$comb) continue;
+
+            foreach ($item['translations'] as $locale => $text) {
+                $comb->setTranslation('content', $locale, $text);
+            }
+            $comb->save();
+        }
+    }
+  
 }
